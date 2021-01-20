@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SmartCalc - Juros Compostos</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/aos.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="icon" href="images/favicon.png">
+  </head>
+  
+  <body>
+    <header>
+      <div class="profile-page sidebar-collapse">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-transparent bg-primary" color-on-scroll="300">
+          <div class="container">
+            <div class="navbar-translate"><a class="navbar-brand" href="#calc">SmartCalc</a>
+            </div>
+            <div class="collapse navbar-collapse justify-content-end" id="navigation">
+              <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="#calc">Calculadora</a></li>
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="#about">Acerca de Juros Compostos</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="page-content">
+      <a id="topBtn"></a>
+
+      <div class="profile-page">
+        <div class="wrapper">
+          <div class="page-header page-header-small">
+            <div class="page-header-image" style="background-image: url('images/smartcalc.jpg');"></div>
+          </div>
+        </div>
+      </div>
+
+    <div class="section" id="calc">
+      <div class="container">
+        <div class="card" data-aos="fade-up" data-aos-offset="10">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="card-body">
+                <div class="h4 mt-0 title"><div id="margem" class="row">Calculadora</div></div>
+                <form id="center">
+                <div class="row calc">
+                
+                <input class="labelCalc" type="text" placeholder="Capital" id="c" oninput="mudou();">
+                
+                <input class="labelCalc" type="text" placeholder="Juros (%)" id="j" oninput="jp();">
+                
+                <select class="labelCalc" name="periodos" id="p" onchange="jp();">
+                    <option value="0.083">Mensal</option>
+                    <option value="0.25">Trimestral</option>
+                    <option value="0.5">Semestral</option>
+                    <option value="1">Anual</option>
+                </select>
+              </div>
+              <div class="row calc">
+                
+                <input class="labelCalc" type="text" placeholder="Duração (Anos)" valor="0" id="a" oninput="mudou();">
+                
+                <input class="labelCalc" type="text" id="r" placeholder="Reforço Mensal"  oninput="mudou();">
+                
+                <input class="labelCalc" type="text" placeholder="Montante Final" id="m" oninput="mudoum();">
+              </div>
+                <div class="row calc">
+                <input type="reset" class="btn btn-secondary" value="Reset" id="resetBtn"></input>
+                <button class="btn btn-primary" id="downloadBtn">DOWNLOAD</button>
+              </div>
+              </form>
+              <div id="margem" class="row">
+                <br><br><p><b>Forma de utilização</b><br>
+                  <b>Capital:</b> é a quantidade de dinheiro que se vai investir num primeiro momento.<br>
+                  <b>Taxa de Juros:</b> a taxa que espera ganhar com o seu investimento.<br>
+                  <b>Reforço Mensal:</b> montante que quer adicionar mensalmente.<br>
+                  <b>Prazo:</b> é o tempo em anos que durará o investimento.<br>
+                  <b>Período:</b> a frequência com que os juros são calculados sobre o seu investimento.<br>
+                  <b>Montante:</b> é a quantidade de dinheiro obtida através dos outros parâmetros.</p>
+                </div>  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="about">
+      <div class="container">
+        <div class="card" data-aos="fade-up" data-aos-offset="10">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="card-body">
+                <div class="h4 mt-0 title">Juros Compostos</div>
+                <p>Os juros compostos são uma fórmula matemática que serve para calcular os juros pagos ou obtidos ao contrair um empréstimo ou fazer um investimento no qual os juros são adicionados ao montante principal. 
+                <br>Isto significa que os juros ganhos sobre o capital investido são adicionados ao capital principal.  O capital não permanece fixo com o tempo, mas aumenta com os juros gerados em cada período, aumentando a cada capitalização.
+              <br><br><b>Como  se Calculam?</b><br>
+              Os juros compostos são calculados como se mostra na fórmula abaixo.<br>
+              principal (<b>P</b>): é o valor inicial da operação.<br>
+              montante (<b>S</b>): é o valor total da operação, ou seja, valor inicial + juros;<br>
+              taxa (<b>i</b>): é o fator que será usado para multiplicar o capital.<br>
+              tempo (<b>n</b>): é o período pelo qual a taxa incidirá sobre o valor inicial.<br>
+              S = P (1 + i)^n </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js "></script>
+    <script src="js/frameworks/jquery.3.2.1.min.js"></script>
+    <script src="js/frameworks/popper.min.js"></script>
+    <script src="js/frameworks/bootstrap.min.js"></script>
+    <script src="js/frameworks/now-ui-kit.js?v=1.1.0"></script>
+    <script src="js/frameworks/aos.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
